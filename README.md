@@ -6,6 +6,8 @@ Um scraper que procura constantemente em períodos de tempo alternados por novos
 * Instale os requisitos: `pip3 install -r requirements.txt`
 * Rode o script `bot.py` usando o comando: `python3 bot.py`
 
+Você pode mudar as palavras-chave de pesquisa de projetos no arquivo `keywords.txt`.
+
 ## Tecnologias
 * SQLite
 * Beautiful Soup
