@@ -62,10 +62,20 @@ def send_telegram_message(project_obj):
 if __name__ == '__main__':
   while True:
     
+    '''
+    Pega as palavras-chave para formar a string de consulta.
+    '''
+    with open('keywords.txt', 'r') as keywords_file:
+      keywords = [keyword.strip() for keyword in keywords_file.readlines()]
+      query = ''
+      for keyword in keywords:
+        query += keyword + ' '
+      query = query[:-1]
+    
     headers = {
       'User-Agent': random_user_agent()
     }
-    response = requests.get('https://www.99freelas.com.br/projects?q=python', headers=headers)
+    response = requests.get(f'https://www.99freelas.com.br/projects?q={query}', headers=headers)
     
     if response.status_code != 200:
       print(response.text)
